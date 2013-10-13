@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::Test::TrailingSpace;
 
-our $VERSION = '0.0.1';
+our $VERSION = '0.0.2';
 
 use Moose;
 extends 'Dist::Zilla::Plugin::InlineFiles';
@@ -52,6 +52,25 @@ in files.
 =head2 register_prereqs()
 
 Needed by L<Dist::Zilla> .
+
+=head1 SEE ALSO
+
+=over 4
+
+=item * L<Dist::Zilla::Plugin::Test::EOL>
+
+Can also check for trailing whitespace.
+
+=item * L<Dist::Zilla::Plugin::EOLTests>
+
+Older and seems less preferable.
+
+=item * L<Test::TrailingSpace>
+
+A standalone test module for trailing whitespace which this is a wrapper
+for.
+
+=back
 
 =cut
 

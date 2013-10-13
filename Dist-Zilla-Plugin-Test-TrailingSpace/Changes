@@ -1,4 +1,7 @@
 Revision history for Dist-Zilla-Plugin-Test-TrailingSpace
 
+v0.0.2  2013-10-13 (SHLOMIF)
+    - Add a SEE ALSO section.
+
 v0.0.1  2013-10-12 (SHLOMIF)
     - First version, released on an unsuspecting world
