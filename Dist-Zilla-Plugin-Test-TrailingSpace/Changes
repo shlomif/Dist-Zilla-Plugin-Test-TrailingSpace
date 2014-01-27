@@ -1,5 +1,8 @@
 Revision history for Dist-Zilla-Plugin-Test-TrailingSpace
 
+v0.0.3  2014-01-27 (SHLOMIF)
+    - Add minimal version of perl to prereqs. (CPANTS Kwalitee)
+
 v0.0.2  2013-10-13 (SHLOMIF)
     - Add a SEE ALSO section.
 

@@ -2,6 +2,8 @@ package Dist::Zilla::Plugin::Test::TrailingSpace;
 
 our $VERSION = '0.0.2';
 
+use 5.012;
+
 use Moose;
 extends 'Dist::Zilla::Plugin::InlineFiles';
 with 'Dist::Zilla::Role::PrereqSource';
