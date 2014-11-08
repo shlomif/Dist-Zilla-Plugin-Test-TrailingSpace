@@ -1,5 +1,8 @@
 Revision history for Dist-Zilla-Plugin-Test-TrailingSpace
 
+v0.2.0  2014-11-08 (SHLOMIF)
+    - Add the filename_regex parameter.
+
 v0.0.4  2014-02-02 (SHLOMIF)
     - Fix the =encoding at the PODs.
 
