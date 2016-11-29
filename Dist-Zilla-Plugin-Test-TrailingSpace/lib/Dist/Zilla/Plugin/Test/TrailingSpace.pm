@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::Test::TrailingSpace;
 
-our $VERSION = '0.2.0';
+our $VERSION = 'v0.2.0';
 
 use 5.012;
 
