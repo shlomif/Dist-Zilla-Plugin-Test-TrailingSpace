@@ -1,7 +1,5 @@
 package Dist::Zilla::Plugin::Test::TrailingSpace;
 
-our $VERSION = 'v0.2.0';
-
 use 5.012;
 
 use Moose;
@@ -11,20 +9,22 @@ with qw/Dist::Zilla::Role::TextTemplate Dist::Zilla::Role::PrereqSource/;
 use namespace::autoclean;
 
 has filename_regex => (
-    is => 'ro',
-    isa => 'Str',
-    default => q/(?:\.(?:t|pm|pl|xs|c|h|txt|pod|PL)|README|Changes|TODO|LICENSE)\z/,
+    is      => 'ro',
+    isa     => 'Str',
+    default =>
+        q/(?:\.(?:t|pm|pl|xs|c|h|txt|pod|PL)|README|Changes|TODO|LICENSE)\z/,
 );
 
 around add_file => sub {
-    my ($orig, $self, $file) = @_;
+    my ( $orig, $self, $file ) = @_;
 
     return $self->$orig(
         Dist::Zilla::File::InMemory->new(
-            name => $file->name,
-            content => $self->fill_in_string($file->content,
+            name    => $file->name,
+            content => $self->fill_in_string(
+                $file->content,
                 {
-                    dist => \($self->zilla),
+                    dist           => \( $self->zilla ),
                     filename_regex => $self->filename_regex,
                 }
             )
@@ -34,7 +34,8 @@ around add_file => sub {
 
 # Register the release test prereq as a "develop requires"
 # so it will be listed in "dzil listdeps --author"
-sub register_prereqs {
+sub register_prereqs
+{
     my ($self) = @_;
 
     $self->zilla->register_prereqs(
@@ -42,7 +43,7 @@ sub register_prereqs {
             type  => 'requires',
             phase => 'develop',
         },
-        'Test::TrailingSpace'     => '0.0203',
+        'Test::TrailingSpace' => '0.0203',
     );
 
     return;
