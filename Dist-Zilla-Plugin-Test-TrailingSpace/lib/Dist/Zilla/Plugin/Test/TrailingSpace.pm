@@ -16,6 +16,11 @@ has filename_regex => (
     default => q/(?:\.(?:t|pm|pl|xs|c|h|txt|pod|PL)|README|Changes|TODO|LICENSE)\z/,
 );
 
+has abs_path_prune_re => (
+    is => 'ro',
+    isa => 'Str',
+);
+
 around add_file => sub {
     my ($orig, $self, $file) = @_;
 
@@ -26,6 +31,7 @@ around add_file => sub {
                 {
                     dist => \($self->zilla),
                     filename_regex => $self->filename_regex,
+                    abs_path_prune_re => $self->abs_path_prune_re,
                 }
             )
         )
@@ -86,6 +92,11 @@ Here is an example of how to override it:
     [Test::TrailingSpace]
     filename_regex = \.(?:pm|pod)\z
 
+=head2 abs_path_prune_re
+
+The regular expression for input to Test::TrailingSpace for specifying paths
+to ignore.
+
 =head1 SUBROUTINES/METHODS
 
 =head2 register_prereqs()
@@ -138,6 +149,9 @@ my $finder = Test::TrailingSpace->new(
    {
        root => '.',
        filename_regex => qr#{{ $filename_regex }}#,
+       abs_path_prune_re => {{ defined $abs_path_prune_re
+                                 ?  qq{qr#$abs_path_prune_re#}
+                                 : 'undef' }},
    },
 );
 
