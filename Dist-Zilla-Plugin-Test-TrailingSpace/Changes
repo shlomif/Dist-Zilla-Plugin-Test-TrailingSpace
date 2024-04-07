@@ -1,5 +1,11 @@
 Revision history for Dist-Zilla-Plugin-Test-TrailingSpace
 
+v0.4.0  2024-04-07 (SHLOMIF)
+    - Add the abs_path_prune_re parameter.
+        - https://github.com/shlomif/Dist-Zilla-Plugin-Test-TrailingSpace/pull/1
+        - thanks to @djerius
+    - Cleanups and updates ( dist.ini / etc. )
+
 v0.2.0  2014-11-08 (SHLOMIF)
     - Add the filename_regex parameter.
 
