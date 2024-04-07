@@ -1,7 +1,5 @@
 package Dist::Zilla::Plugin::Test::TrailingSpace;
 
-our $VERSION = 'v0.2.0';
-
 use 5.012;
 
 use Moose;
